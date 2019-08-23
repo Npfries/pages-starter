@@ -2,6 +2,10 @@ const express = require('express')
 const path = require('path')
 const app = express()
 const workboxBuild = require('workbox-build');
+const showdown  = require('showdown')
+let converter = new showdown.Converter(),
+    text      = '# hello, markdown!',
+    html      = converter.makeHtml(text);
 
 app.use(express.static('docs'))
 
